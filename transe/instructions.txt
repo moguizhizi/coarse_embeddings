@@ -1,0 +1,43 @@
+Our coarse TransE code runs on top of OpenKE, found here:
+
+https://github.com/thunlp/OpenKE
+
+We have included this code in our package. Unzip it using:
+
+unzip OpenKE-OpenKE-PyTorch.zip
+
+It is important that the code is installed and running properly before executing our code. To ensure this, follow the instructions in the OpenKE README (included in package) and train the TransE model on FB15K237 dataset using:
+
+train_transe_FB15K237.py
+
+This will ensure that OpenKE has been installed successfully and our coarse code can run.
+
+Navigate back to this directory and copy the dataset archive data.zip and unzip using:
+
+cp ../data.zip OpenKE-OpenKE-PyTorch/data.zip
+
+and
+
+unzip OpenKE-OpenKE-PyTorch/data.zip -d OpenKE-OpenKE-PyTorch
+
+Then, run our setup code using:
+
+./setup.sh
+
+Navigate to /OpenKE-OpenKE-PyTorch and run coarse_transe.py to run our code:
+
+To obtain results for the mutag dataset, run:
+
+python3 coarse_transe.py -d mutag --alpha 1 --bepochs 13 --cepochs 22
+
+To obtain results for the aifb dataset, run:
+
+python3 coarse_transe.py -d aifb --alpha 0.25 --bepochs 49 --cepochs 41
+
+To obtain results for the bgs dataset, run:
+
+python3 coarse_transe.py -d bgs --alpha 0.5 --bepochs 28 --cepochs 90
+
+To obtain results for the am dataset, run:
+
+python3 coarse_transe.py -d am --alpha 0.5 --bepochs 49 --cepochs 90
