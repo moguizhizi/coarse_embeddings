@@ -1,0 +1,14 @@
+cp coarsening.py relational-gcn-master/rgcn/coarsening.py;
+cp coarse_r-gcn.py relational-gcn-master/rgcn/coarse_r-gcn.py;
+cp coarse_utils.py relational-gcn-master/rgcn/coarse_utils.py;
+gzip -dk relational-gcn-master/rgcn/data/mutag/mutag_stripped.nt.gz;
+gzip -dk relational-gcn-master/rgcn/data/aifb/aifb_stripped.nt.gz;
+gzip -dk relational-gcn-master/rgcn/data/bgs/bgs_stripped.nt.gz;
+mv 'relational-gcn-master/rgcn/data/bgs/trainingSet(lith).tsv' relational-gcn-master/rgcn/data/bgs/trainingSet.tsv;
+mv 'relational-gcn-master/rgcn/data/bgs/testSet(lith).tsv' relational-gcn-master/rgcn/data/bgs/testSet.tsv;
+mv 'relational-gcn-master/rgcn/data/bgs/completeDataset_lith.tsv' relational-gcn-master/rgcn/data/bgs/completeDataset.tsv;
+gzip -dk relational-gcn-master/rgcn/data/am/am_stripped.nt.gz;
+mkdir relational-gcn-master/rgcn/data/coarse_mutag;
+mkdir relational-gcn-master/rgcn/data/coarse_aifb;
+mkdir relational-gcn-master/rgcn/data/coarse_bgs;
+mkdir relational-gcn-master/rgcn/data/coarse_am;

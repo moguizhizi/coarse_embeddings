@@ -1,0 +1,31 @@
+Our coarse R-GCN code runs on top of the original R-GCN code that was published alongside its paper and is found here:
+
+https://github.com/tkipf/relational-gcn
+
+We have included this code in our package. Unzip it using:
+
+unzip relational-gcn-master.zip
+
+It is important that the code is installed and running properly before executing our code. To ensure this, follow the instructions in the R-GCN README (included in package) and train the base R-GCN model to ensure everything is running correctly.
+
+Once the base R-GCN code as been set up, run setup.sh to copy our files and create directories necessery for execution:
+
+./setup.sh
+
+Navigate to relational-gcn/rgcn/ and run coarse_r-gcn.py to run our code.
+
+To obtain results for the mutag dataset, run:
+
+KERAS_BACKEND=theano python2 coarse_r-gcn.py -d mutag --bases 30 --hidden 16 --l2norm 5e-4 --testing --bepochs 15 --cepochs 14
+
+To obtain results for the aifb dataset, run:
+
+KERAS_BACKEND=theano python2 coarse_r-gcn.py -d aifb --bases 0 --hidden 16 --l2norm 0. --testing --bepochs 5 --cepochs 23
+
+To obtain results for the bgs dataset, run:
+
+KERAS_BACKEND=theano python2 coarse_r-gcn.py -d bgs --bases 40 --hidden 16 --l2norm 5e-4 --testing --bepochs 4 --cepochs 12 --alpha 0.75
+
+To obtain results for the am dataset, run:
+
+KERAS_BACKEND=theano python2 coarse_r-gcn.py -d am --bases 40 --hidden 10 --l2norm 5e-4 --testing --bepochs 1 --cepochs 60
