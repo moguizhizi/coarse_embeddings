@@ -1,0 +1,25 @@
+Our code for coarse RDF2Vec embeddings runs on Python 3.6 and requires the dependencies outlined in the requirements.txt file. Ensure that all dependencies are met before running our code.
+
+Copy the dataset archive data.zip and unzip in this directory using:
+
+cp ../data.zip data.zip
+
+and
+
+unzip data.zip
+
+To obtain results for the mutag dataset, run:
+
+python3 coarse_rdf2vec.py
+
+To obtain results for the aifb dataset, run:
+
+python3 coarse_rdf2vec.py -d aifb --bepochs 8 --cepochs 8
+
+To obtain results for the bgs dataset, run:
+
+python3 coarse_rdf2vec.py -d bgs --bepochs 35 --cepochs 12
+
+To obtain results for the am dataset, run:
+
+python3 coarse_rdf2vec.py -d am --bepochs 46 --cepochs 48 --alpha 0.75
